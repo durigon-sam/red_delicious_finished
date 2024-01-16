@@ -469,7 +469,7 @@ pub fn attack_simulate(
                 else {
                     attacker_stats.kd_ratio = attacker_stats.players_killed as f32;
                 }
-                attacker_stats.score += 20;
+                attacker_stats.score = attacker_stats.score.saturating_add(20);
             }
         }
         let mut combinations = players.iter_combinations_mut();
